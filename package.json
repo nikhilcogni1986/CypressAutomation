@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Cypress Automation Basic Scripts",
   "main": "index.js",
-  "scripts": 
-  {
+  "scripts": {
     "test": "node_modules\\.bin\\cypress run",
     "ChromeHeadedTest": "npm run test -- --browser chrome",
     "ElectronHeadedTest": "npm run test -- --headed"
@@ -14,5 +13,8 @@
   "dependencies": {
     "cypress": "^13.6.3",
     "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5"
   }
 }

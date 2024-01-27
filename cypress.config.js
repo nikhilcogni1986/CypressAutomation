@@ -8,9 +8,9 @@ module.exports = defineConfig({
     },
     defaultCommandTimeout:6000,
     specPattern: 'cypress/e2e/*.js',
-    retries:{
-      runMode:1,
-      openMode:1
-    },
+    // retries:{
+    //   runMode:1,
+    //   openMode:1
+    // },
   },
 });

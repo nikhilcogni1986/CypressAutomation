@@ -10,16 +10,22 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('addProductToCart', (productName) => 
+Cypress.Commands.add('addProductToCart', (productToBeAddedToCart) => 
 {
     cy.get("div.product-thumb div.caption h4 a").each(($el,index,$list) =>{
         let productName = $el.text();
         cy.log(productName);
-        if(productName === "iPhone")
+        if(productName === productToBeAddedToCart)
         {
             cy.get("div.product-thumb div.button-group span").eq(index).click({force:true});
             return;
         }
+    })
+
+    //Validate the success message once product is added to cart
+    cy.get("div.alert.alert-success").then((popmsg)=>{
+        cy.log(popmsg.text());
+        expect(popmsg.text()).to.include("Success: You have added");
     })
 })
     

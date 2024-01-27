@@ -10,8 +10,19 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+Cypress.Commands.add('addProductToCart', (productName) => 
+{
+    cy.get("div.product-thumb div.caption h4 a").each(($el,index,$list) =>{
+        let productName = $el.text();
+        cy.log(productName);
+        if(productName === "iPhone")
+        {
+            cy.get("div.product-thumb div.button-group span").eq(index).click({force:true});
+            return;
+        }
+    })
+})
+    
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

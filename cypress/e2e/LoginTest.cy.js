@@ -20,6 +20,6 @@ describe('Login to Application', ()=>{
         cy.get("#content h1").then((logoutHeader)=>{
             let logout_txt = logoutHeader.text();
             expect(logout_txt).to.contain('Account Logout');
-        })
+        });
     });
 })

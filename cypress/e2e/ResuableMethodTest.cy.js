@@ -38,6 +38,7 @@ describe('Add Product to the cart', ()=>{
         //validate the checkout url
         cy.url().should('include','?route=checkout/cart');
         cy.get("div.pull-right").contains("Checkout").click();
+        
         cy.get(':nth-child(1) > label > input').should('be.checked');
         cy.get("input[value='new']").check();
        
